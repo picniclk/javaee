@@ -1,0 +1,44 @@
+<%-- 
+    Document   : addCustomer
+    Created on : Oct 2, 2016, 9:48:01 AM
+    Author     : Yoshan Amarathunga
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Customer</title>
+        <style>
+            .errors{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+    <form:form action="addCustomer.htm" modelAttribute="cust" method="post">
+        Customer ID:<form:input path="custId" /><form:errors path="custId" cssClass="errors" /><br>
+        Name :<form:input path="name" /><form:errors path="name" cssClass="errors" /><br>
+        Address :<form:input path="address" /><form:errors path="address" cssClass="errors" /><br>
+        <input type="submit" value="Add Customer">
+    </form:form>
+        <div>
+            <h1>All Customers</h1>
+            <c:choose>
+                <c:when test="${allCust == null && allCust.isEmpty()}">
+                    <h1>No Customer added !!!</h1>
+                </c:when>
+                <c:otherwise>
+                    <c:forEach var="customer" items="${allCust}" >
+                        <h5>${customer.custId}" "${customer.name}</h5>
+                    </c:forEach>
+                </c:otherwise>
+            </c:choose>
+            
+                    
+        </div>
+    </body>
+</html>
