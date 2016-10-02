@@ -1,0 +1,123 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="s" uri="http://www.springframework.org/tags" %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Thogakade-Customers</title>
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" >
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
+        <script type="text/javascript" src="../js/jquery-1.9.0.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="sr-only">Thogakade</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Thogakade</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../index" >Home</a></li>
+                        <li class="active"><a href="../customer/getall">Customer</a></li>
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Items</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <br><br><br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="../customer/getall" class="btn btn-info">Back</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Add Customer</h2>
+                    <sf:form action="../customer/add" modelAttribute="customer" method="POST">
+                        <div class="form-group">
+                            <sf:label path="custName" for="inputName">Customer Name:</sf:label>
+                            <sf:input type="text" class="form-control" id="inputName" placeholder="Customer Name" path="custName"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:errors path="custName" cssClass="form-control alert-danger text-danger"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:label path="custTitle" for="inputTitle">Title:</sf:label>
+                            <sf:select path="custTitle" id="inputTitle" class="form-control" >
+                                <sf:option value="Mr.">Mr.</sf:option>
+                                <sf:option value="Mrs.">Mrs.</sf:option>
+                            </sf:select>
+                        </div>
+                        <div class="form-group">
+                            <sf:label path="dob" for="inputDOB">DOB:</sf:label>
+                            <sf:input path="dob" type="date" class="form-control" id="inputDOB" placeholder="DOB"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:errors path="dob" cssClass="form-control alert-danger text-danger"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:label path="salary" for="inputSalary">Salary:</sf:label>
+                            <sf:input path="salary" type="text" class="form-control" id="inputSalary" placeholder="Salary"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:errors path="salary" cssClass="form-control alert-danger text-danger"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:label path="custAddress" for="inputAddress">Address:</sf:label>
+                            <sf:input path="custAddress" type="text" class="form-control" id="inputAddress" placeholder="Address"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:errors path="custAddress" cssClass="form-control alert-danger text-danger"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:label path="city" for="inputCity">City:</sf:label>
+                            <sf:input path="city" type="text" class="form-control" id="inputCity" placeholder="City"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:errors path="city" cssClass="form-control alert-danger text-danger"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:label path="province" for="inputProvince">Province:</sf:label>
+                            <sf:input path="province" type="text" class="form-control" id="inputProvince" placeholder="Province"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:errors path="province" cssClass="form-control alert-danger text-danger"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:label path="postalCode" for="inputPostal">Postal Code</sf:label>
+                            <sf:input path="postalCode" type="number" class="form-control" id="inputPostal"/>
+                        </div>
+                        <div class="form-group">
+                            <sf:errors path="postalCode" cssClass="form-control alert-danger text-danger"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </sf:form>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12">
+                    <footer>
+                        <p>&copy; <a href="ijse.lk">IJSE (Institute of Java and Software Engineering)</a></p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
