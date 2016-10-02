@@ -1,0 +1,67 @@
+<%-- 
+    Document   : style
+    Created on : Mar 16, 2016, 1:02:03 PM
+    Author     : Yoshan Amarathunga
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" th:href="{@/css/bootstrap.min.css}">
+
+        <link href="css/nav.css" rel="stylesheet" th:href="{@/css/nav.css}">
+        <link href="css/scrl_ico_srch.css" rel="stylesheet" th:href="{@/css/scrl_ico_srch.css}" />
+        <link href="css/body_view.css" rel="stylesheet" th:href="{@/css/body_view.css}">
+
+
+        <script	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/bootstrap.js" th:href="{@/js/bootstrap.js}"></script>
+
+        <script type="text/javascript" src="js/jquery.min.js" th:href="{@/js/jquery.min.js}"></script>
+
+
+        <!-- start-smoth-scrolling -->
+        <script type="text/javascript" src="js/move-top.js" th:href="{@/js/move-top.js}"></script>
+        <script type="text/javascript" src="js/easing.js" th:href="{@/js/easing.js}"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                $(".scroll").click(function(event) {
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+                });
+            });
+        </script>
+        <!-- end-smoth-scrolling -->
+
+        <script
+        src="../../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script
+        src="../../maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <!-- smooth scrolling -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                /*
+                 var defaults = {
+                 containerID: 'toTop', // fading element id
+                 containerHoverID: 'toTopHover', // fading element hover id
+                 scrollSpeed: 1200,
+                 easingType: 'linear' 
+                 };
+                 */
+                $().UItoTop({
+                    easingType: 'easeOutQuart'
+                });
+            });
+        </script>
+    <a href="#" id="toTop" style="display: block;"> <span
+            id="toTopHover" style="opacity: 1;"> </span></a>
+    <!-- //smooth scrolling -->
+
+
+</head>
+
+</html>
